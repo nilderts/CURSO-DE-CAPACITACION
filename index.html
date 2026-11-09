@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<!-- Indicamos que el documento utiliza HTML5 -->
+<html lang="es">
+
+<head>
+
+    <!-- Permite trabajar con tildes, ñ y caracteres especiales -->
+    <meta charset="UTF-8">
+
+    <!-- Permite que la página se adapte a celulares y tablets -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparecerá en la pestaña del navegador -->
+    <title>Registro de Participantes</title>
+
+    <!-- Cargamos los estilos de Bootstrap 5 -->
+    <link rel="stylesheet"
+          href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <!--
+        container:
+        crea el contenedor principal,
+        centra el contenido y lo adapta al ancho de pantalla.
+
+        mt-4:
+        agrega margen en la parte superior.
+    -->
+    <div class="container mt-4">
+
+
+        <!-- Título principal -->
+        <h1 class="text-center">
+            Registro de Participantes
+        </h1>
+
+
+        <!--
+            FORMULARIO
+
+            id="formParticipante":
+            permitirá localizar posteriormente
+            este formulario desde JavaScript.
+        -->
+        <form id="formParticipante">
+
+
+            <!--
+                row:
+                crea una fila.
+
+                Bootstrap divide cada fila
+                en 12 columnas.
+            -->
+            <div class="row">
+
+
+                <!--
+                    col-md-6:
+                    ocupa 6 de las 12 columnas
+                    desde pantallas medianas.
+
+                    6 + 6 = 12
+                -->
+                <div class="col-md-6">
+
+
+                    <!--
+                        form-label:
+                        aplica formato Bootstrap
+                        a la etiqueta.
+                    -->
+                    <label
+                        for="tipoDocumento"
+                        class="form-label">
+
+                        Tipo de documento
+
+                    </label>
+
+
+                    <!--
+                        form-select:
+                        aplica diseño Bootstrap
+                        al control SELECT.
+
+                        required:
+                        obliga al usuario
+                        a seleccionar una opción.
+                    -->
+                    <select
+                        id="tipoDocumento"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            Seleccione...
+                        </option>
+
+                        <option value="DNI">
+                            DNI
+                        </option>
+
+                        <option value="CE">
+                            Carnet de extranjería
+                        </option>
+
+                        <option value="OTRO">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Segunda mitad de la fila -->
+                <div class="col-md-6">
+
+
+                    <!-- Etiqueta del número de documento -->
+                    <label
+                        for="numeroDocumento"
+                        class="form-label">
+
+                        Número de documento
+
+                    </label>
+
+
+                    <!--
+                        form-control:
+                        aplica formato Bootstrap
+                        a una caja de texto.
+
+                        maxlength="12":
+                        permite máximo 12 caracteres.
+                    -->
+                    <input
+                        type="text"
+                        id="numeroDocumento"
+                        class="form-control"
+                        maxlength="12"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Segunda fila -->
+            <div class="row mt-3">
+
+
+                <!-- Primera mitad -->
+                <div class="col-md-6">
+
+
+                    <label
+                        for="nombres"
+                        class="form-label">
+
+                        Nombres
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="nombres"
+                        class="form-control"
+                        required>
+
+                </div>
+
+
+
+                <!-- Segunda mitad -->
+                <div class="col-md-6">
+
+
+                    <label
+                        for="apellidos"
+                        class="form-label">
+
+                        Apellidos
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="apellidos"
+                        class="form-control"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Tercera fila -->
+            <div class="row mt-3">
+
+
+                <!-- Primera mitad -->
+                <div class="col-md-6">
+
+
+                    <label
+                        for="tipoParticipante"
+                        class="form-label">
+
+                        Tipo de participante
+
+                    </label>
+
+
+                    <select
+                        id="tipoParticipante"
+                        class="form-select"
+                        required>
+
+                        <option value="">
+                            Seleccione...
+                        </option>
+
+                        <option value="Estudiante">
+                            Estudiante
+                        </option>
+
+                        <option value="Egresado">
+                            Egresado
+                        </option>
+
+                        <option value="Externo">
+                            Externo
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Segunda mitad -->
+                <div class="col-md-6">
+
+
+                    <label
+                        for="correo"
+                        class="form-label">
+
+                        Correo electrónico
+
+                    </label>
+
+
+                    <!--
+                        type="email":
+                        permite que HTML5 verifique
+                        el formato del correo.
+                    -->
+                    <input
+                        type="email"
+                        id="correo"
+                        class="form-control"
+                        placeholder="ejemplo@gmail.com"
+                        required>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Fila para botones -->
+            <div class="row mt-4">
+
+
+                <!-- Una columna que ocupa todo el ancho -->
+                <div class="col-12">
+
+
+                    <!--
+                        btn:
+                        aplica formato de botón Bootstrap.
+
+                        btn-primary:
+                        utiliza el color principal,
+                        normalmente azul.
+                    -->
+                    <button
+                        type="submit"
+                        class="btn btn-primary">
+
+                        Registrar
+
+                    </button>
+
+
+                    <!--
+                        btn-secondary:
+                        utiliza un color secundario,
+                        normalmente gris.
+                    -->
+                    <button
+                        type="reset"
+                        class="btn btn-secondary">
+
+                        Limpiar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+             <!-- Fila para tabla -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    
+        <!-- Título -->
+        <h2>
+            Participantes registrados
+        </h2>
+
+
+        <!--
+            table:
+            aplica diseño Bootstrap a la tabla.
+        -->
+        <table class="table">
+
+
+            <!-- Encabezado de la tabla -->
+            <thead>
+
+
+                <!-- Fila de títulos -->
+                <tr>
+
+                    <th>Documento</th>
+
+                    <th>Nombres</th>
+
+                    <th>Apellidos</th>
+
+                    <th>Tipo</th>
+
+                    <th>Correo</th>
+
+                </tr>
+
+
+            </thead>
+
+
+            <!--
+                tbody:
+                aquí JavaScript agregará
+                los participantes.
+
+                id="tablaParticipantes":
+                permitirá localizar esta sección.
+            -->
+            <tbody id="tablaParticipantes">
+
+            </tbody>
+
+
+        </table>
+
+                </div>
+            </div>
+
+
+        </form>
+
+        
+
+    </div>
+
+
+    <!-- Cargamos JavaScript de Bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
